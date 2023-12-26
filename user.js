@@ -633,18 +633,18 @@ user_pref("browser.contentblocking.category", "strict"); // [HIDDEN PREF]
 user_pref("_user.js.parrot", "2800 syntax error: the parrot's bleedin' demised!");
 /* 2810: enable Firefox to clear items on shutdown
  * [SETTING] Privacy & Security>History>Custom Settings>Clear history when Firefox closes | Settings ***/
-user_pref("privacy.sanitize.sanitizeOnShutdown", true);
+user_pref("privacy.sanitize.sanitizeOnShutdown", false);
 
 /** SANITIZE ON SHUTDOWN: IGNORES "ALLOW" SITE EXCEPTIONS ***/
 /* 2811: set/enforce what items to clear on shutdown (if 2810 is true) [SETUP-CHROME]
  * [NOTE] If "history" is true, downloads will also be cleared
  * [NOTE] "sessions": Active Logins: refers to HTTP Basic Authentication [1], not logins via cookies
  * [1] https://en.wikipedia.org/wiki/Basic_access_authentication ***/
-user_pref("privacy.clearOnShutdown.cache", true);     // [DEFAULT: true]
-user_pref("privacy.clearOnShutdown.downloads", true); // [DEFAULT: true]
-user_pref("privacy.clearOnShutdown.formdata", true);  // [DEFAULT: true]
-user_pref("privacy.clearOnShutdown.history", true);   // [DEFAULT: true]
-user_pref("privacy.clearOnShutdown.sessions", true);  // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown.cache", false);     // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown.downloads", false); // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown.formdata", false);  // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown.history", false);   // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown.sessions", false);  // [DEFAULT: true]
    // user_pref("privacy.clearOnShutdown.siteSettings", false); // [DEFAULT: false]
 /* 2812: set Session Restore to clear on shutdown (if 2810 is true) [FF34+]
  * [NOTE] Not needed if Session Restore is not used (0102) or it is already cleared with history (2811)
@@ -660,8 +660,8 @@ user_pref("privacy.clearOnShutdown.sessions", true);  // [DEFAULT: true]
  * [WARNING] Be selective with what sites you "Allow", as they also disable partitioning (1767271)
  * [SETTING] to add site exceptions: Ctrl+I>Permissions>Cookies>Allow (when on the website in question)
  * [SETTING] to manage site exceptions: Options>Privacy & Security>Permissions>Settings ***/
-user_pref("privacy.clearOnShutdown.cookies", true); // Cookies
-user_pref("privacy.clearOnShutdown.offlineApps", true); // Site Data
+user_pref("privacy.clearOnShutdown.cookies", false); // Cookies
+user_pref("privacy.clearOnShutdown.offlineApps", false); // Site Data
 
 /** SANITIZE MANUAL: IGNORES "ALLOW" SITE EXCEPTIONS ***/
 /* 2820: reset default items to clear with Ctrl-Shift-Del [SETUP-CHROME]
@@ -669,10 +669,10 @@ user_pref("privacy.clearOnShutdown.offlineApps", true); // Site Data
  * Firefox remembers your last choices. This will reset them when you start Firefox
  * [NOTE] Regardless of what you set "downloads" to, as soon as the dialog
  * for "Clear Recent History" is opened, it is synced to the same as "history" ***/
-user_pref("privacy.cpd.cache", true);    // [DEFAULT: true]
-user_pref("privacy.cpd.formdata", true); // [DEFAULT: true]
-user_pref("privacy.cpd.history", true);  // [DEFAULT: true]
-user_pref("privacy.cpd.sessions", true); // [DEFAULT: true]
+user_pref("privacy.cpd.cache", false);    // [DEFAULT: true]
+user_pref("privacy.cpd.formdata", false); // [DEFAULT: true]
+user_pref("privacy.cpd.history", false);  // [DEFAULT: true]
+user_pref("privacy.cpd.sessions", false); // [DEFAULT: true]
 user_pref("privacy.cpd.offlineApps", false); // [DEFAULT: false]
 user_pref("privacy.cpd.cookies", false);
    // user_pref("privacy.cpd.downloads", true); // not used, see note above
@@ -684,7 +684,7 @@ user_pref("privacy.cpd.cookies", false);
  * 0=everything, 1=last hour, 2=last two hours, 3=last four hours, 4=today
  * [NOTE] Values 5 (last 5 minutes) and 6 (last 24 hours) are not listed in the dropdown,
  * which will display a blank value, and are not guaranteed to work ***/
-user_pref("privacy.sanitize.timeSpan", 0);
+user_pref("privacy.sanitize.timeSpan", 1);
 
 /*** [SECTION 4500]: RFP (resistFingerprinting)
    RFP covers a wide range of ongoing fingerprinting solutions.
