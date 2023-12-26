@@ -378,7 +378,7 @@ user_pref("_user.js.parrot", "1000 syntax error: the parrot's gone to meet 'is m
 /* 1001: disable disk cache
  * [SETUP-CHROME] If you think disk cache helps perf, then feel free to override this
  * [NOTE] We also clear cache on exit (2811) ***/
-user_pref("browser.cache.disk.enable", false);
+user_pref("browser.cache.disk.enable", true);
 /* 1002: disable media cache from writing to disk in Private Browsing
  * [NOTE] MSE (Media Source Extensions) are already stored in-memory in PB ***/
 user_pref("browser.privatebrowsing.forceMediaMemoryCache", true); // [FF75+]
